@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @media screen and (orientation:landscape) {
+            body{
+                font-family: arial;
+                margin: 0px;
+                padding: 0px;
+            }
+            .brand{
+                font-size: 25px;
+                font-weight: bold;
+            }
+            .nav span{
+                margin-right: 15px;
+            }
+            .icons span{
+                margin-right: 10px;
+            }
+            header{
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+                font-size:20px;
+                margin-right: 15px;
+            }
+            .bi-lightning-fill{
+                color: gold;
+            }
+            .women{
+                background-image: url(public/images/cover-1.jpg);
+                background-size:cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.8;
+                height: 470px;
+            }
+            .men{
+                background-image: url(public/images/cover-2.jpg);
+                background-size:cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.8;
+            }
+            .kid{
+                background-image: url(public/images/cover-3.jpg);
+                background-size:cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.8;
+            }
+            .card-title{
+                color: white;
+                font-weight: bold;
+                font-size: 50px;
+                text-shadow: 2px 2px 3px black;
+            }
+            button{
+                margin-top:150px;
+                width:150px;
+                padding:20px;
+                border: none;
+                color: black;
+                font-family: arial;
+                font-size: 15px;
+            }
+            .men:hover,.women:hover,.kid:hover{
+                opacity: 1;
+            }
+            .bi-cart3{
+                position:relative;
+            }
+            .cart-count{
+                display: inline-block;
+                width: 15px;
+                background-color: red;
+                text-align: center;
+                border-radius:15px;
+                font-size: 15px;
+                color: white;
+                position: absolute;
+                top:-7px;
+                left:12px;
+            }
+            .bi-truck,.bi-lock,.bi-tag,.bi-arrow-left-right{
+                color: red;
+                font-size: 25px;
+            }
+            .shipping{
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+            .bold_line{
+                font-weight: bold;
+                font-size: 35px;
+                color: black;
+            }
+            .collection{
+                text-align: center;
+                margin: 80px 1000px;
+                color: gray;
+                font-family: Arial, Helvetica, sans-serif;
+                height: auto;
+                display: flex;
+                justify-content: center;
+            }
+            header{
+                grid-row: 1;
+                grid-column: 1/4;
+            }
+            .bi-justify{
+                display: none;
+            }
+            main{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            height:470px;
+            }
+            article{
+                grid-row: 2;
+                grid-column: 1/4;
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-size: 20px;
+            }
+            section{
+                height: 500px;
+                margin-top: 20px;
+            }
+            .section-1{
+                grid-row: 3;
+                grid-column: 1/4;
+            }
+            .row{
+                grid-row: 4;
+                grid-column: 1/4;
+            }
+            .collection{
+                grid-row: 5;
+                grid-column: 1/4;
+            }
+            .section-1{
+                grid-row: 6;
+                grid-column: 1/4;
+            }
+            footer{
+                grid-row: 7;
+                grid-column: 1/4;
+            }
+            .row{
+                display: flex;
+                justify-content: space-around;
+                margin: 0px 80px;
+                border-bottom: 1px gray solid;
+                height:auto;
+                padding: 20px;
+                font-family: arial;
+                font-size: 15px;
+            }
+            .col{
+                display: grid;
+                grid-template-columns: 2fr 10fr;
+            }
+            .collection{
+                text-align: center;
+                margin: 80px 28%;
+                color: gray;
+                font-family: Arial, Helvetica, sans-serif;
+                height: auto;
+                display: flex;
+                justify-content: center;
+            }
+            .collection_div div{
+                margin-bottom: 20px;
+            }
+            .section-1{
+                height:auto;
+                margin: 20px 0px;
+            }
+            .main1{
+                display: grid;
+                grid-template-columns: 4fr 8fr;
+                margin:0px 100px;
+                margin-bottom: 30px;
+                column-gap: 30px;
+            }
+            .main2{
+                display: grid;
+                grid-template-columns: 8fr 4fr;
+                margin:0px 100px;
+                column-gap: 30px;
+                margin-bottom: 30px;
+            }
+            .card1{
+                background-image: url(public/images/card-1.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 400px;
+            }
+            .card2{
+                background-image: url(public/images/card-24.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                height: 400px;
+                position: relative;
+            }            
+            .card3{
+                background-image: url(public/images/card-3.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                height: 400px;
+            }
+            .card4{
+                background-image: url(public/images/card-4.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 400px;
+            }
+            .card-1 div{
+                color: white;
+                font-weight: bold;
+                margin-bottom: 15px;
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .card-2{
+                color: black;
+                font-weight: bold;
+                margin-bottom: 15px;
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-left: 50px;
+            }        
+            .offer{
+                position: absolute;
+                top:20px;
+                right: 20px;
+                font-size: 15px;
+                color: white;
+                border: 1px red solid;
+                background-color: red;
+                border-radius: 50px;
+                width:80px;
+                justify-content: center;
+                height: 80px;
+                display: flex;
+                align-items: center;
+            }
+            .discount{
+                font-size: 25px;
+                margin-top: 5px;
+            }
+            footer{
+            display: grid;
+            grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;
+            background-color: black;
+            color: white;
+            font-family: arial;
+            padding: 50px;
+            }
+            .footer-brand{
+                font-size: 25px;
+                font-weight: bold;
+                margin-bottom: 25px;
+            }
+            aside span{
+                margin-right: 10px;
+                margin-top: 20px;
+            }
+            .footer-title{
+                margin-bottom: 25px;
+            }
+            .footer-title~span{
+                display: block;
+                margin-bottom: 10px;
+                color: gray;
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            body{
+                font-family: arial;
+                margin: 0px;
+                padding: 0px;
+            }
+            .brand{
+                font-size: 25px;
+                font-weight: bold;
+            }
+            .nav span{
+                margin-right: 15px;
+            }
+            .icons span{
+                margin-right: 10px;
+            }
+            header{
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+                font-size:20px;
+                margin-right: 15px;
+            }
+            .bi-lightning-fill{
+                color: gold;
+            }
+            .women{
+                background-image: url(public/images/cover-1.jpg);
+                background-size:cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.8;
+                height: 470px;
+            }
+            .men{
+                background-image: url(public/images/cover-2.jpg);
+                background-size:cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.8;
+            }
+            .kid{
+                background-image: url(public/images/cover-3.jpg);
+                background-size:cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.8;
+            }
+            .card-title{
+                color: white;
+                font-weight: bold;
+                font-size: 50px;
+                text-shadow: 2px 2px 3px black;
+            }
+            button{
+                margin-top:150px;
+                width:150px;
+                padding:20px;
+                border: none;
+                color: black;
+                font-family: arial;
+                font-size: 15px;
+            }
+            .men:hover,.women:hover,.kid:hover{
+                opacity: 1;
+            }
+            .bi-cart3{
+                position:relative;
+            }
+            .cart-count{
+                display: inline-block;
+                width: 15px;
+                background-color: red;
+                text-align: center;
+                border-radius:15px;
+                font-size: 15px;
+                color: white;
+                position: absolute;
+                top:-7px;
+                left:12px;
+            }
+            .bi-truck,.bi-lock,.bi-tag,.bi-arrow-left-right{
+                color: red;
+                font-size: 25px;
+            }
+            .shipping{
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+            .bold_line{
+                font-weight: bold;
+                font-size: 35px;
+                color: black;
+            }
+            .collection{
+                text-align: center;
+                margin: 80px 1000px;
+                color: gray;
+                font-family: Arial, Helvetica, sans-serif;
+                height: auto;
+                display: flex;
+                justify-content: center;
+            }
+            header{
+                grid-row: 1;
+            }
+            nav{
+                display: none;
+            }
+            .bi-justify{
+                display: inline;
+            }
+            article{
+                grid-row: 2;
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-size: 15px;
+            }
+            section{
+                height: 500px;
+                margin-top: 20px;
+            }
+            .section-1{
+                grid-row: 3;
+            }
+            /* .main{
+                display: grid;
+                grid-template-columns: 12fr;
+            } */
+            .men{
+                display: none;
+            }
+            .kid{
+                display: none;
+            }
+            .row{
+                grid-row: 4;
+                margin: 40px 0px;
+                border-bottom: 1px gray solid;
+                height:auto;
+            }
+            .col{
+                display: grid;
+                grid-template-columns: 2fr 10fr;
+                margin-bottom: 20px;
+                margin-left: 20px;
+            }
+            .collection{
+                grid-row: 5;
+                text-align: center;
+                margin: 80px 20px;
+                color: gray;
+                font-family: Arial, Helvetica, sans-serif;
+                height: auto;
+                display: flex;
+                justify-content: center;
+            }
+            .collection_div div{
+                margin-bottom: 20px;
+            }
+            .section-1{
+                grid-row: 6;
+                height:auto;
+                margin: 20px 0px;
+            }
+            .main1{
+                display: grid;
+                grid-template-columns: 12fr;
+                margin: 30px;
+            }
+            .main2{
+                display: grid;
+                grid-template-columns: 12fr;
+                margin: 30px;
+            }
+            .card1{
+                background-image: url(public/images/card-1.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 400px;
+                margin-bottom: 30px;
+            }
+            .card2{
+                background-image: url(public/images/card-24.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                height: 400px;
+                position: relative;
+            }
+            .card3{
+                background-image: url(public/images/card-3.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                height: 400px;
+                margin-bottom: 30px;
+            }
+            .card4{
+                background-image: url(public/images/card-4.jpg);
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 400px;
+            }
+            .card-1 div{
+                color: white;
+                font-weight: bold;
+                margin-bottom: 15px;
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .card-2{
+                color: black;
+                font-weight: bold;
+                margin-bottom: 15px;
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-left: 50px;
+            }
+            .offer{
+                position: absolute;
+                top:20px;
+                right: 20px;
+                font-size: 15px;
+                color: white;
+                border: 1px red solid;
+                background-color: red;
+                border-radius: 50px;
+                width:80px;
+                justify-content: center;
+                height: 80px;
+                display: flex;
+                align-items: center;
+            }
+            .discount{
+                font-size: 25px;
+                margin-top: 5px;
+            }
+            footer{
+                grid-row: 7;
+                background-color: black;
+                color: white;
+                font-family: arial;
+                padding: 20px;
+                display: grid;
+                grid-template-columns: 6fr 6fr;
+                column-gap: 18px;
+            }
+            .footer-brand{
+                font-size: 25px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            .foot-brand{
+                /* grid-row: 1; */
+                grid-column: 1/3;
+            }
+            aside span{
+                margin-right: 10px;
+                margin-top: 20px;
+                color: gray;
+            }
+            .footer-title{
+                margin-bottom: 25px;
+            }
+            .footer-title~span{
+                display: block;
+                margin-bottom: 10px;
+                color: gray;
+            }
+            footer div{
+                margin-bottom: 30px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span class="brand">Shopper.</span>
+        </div>
+        <div>
+            <nav class="nav">
+                <span>Home</span>
+                <span>Shop</span>
+                <span>Pages</span>
+                <span>Blog</span>
+                <span>Docs</span>
+            </nav>
+        </div>
+        <div>
+            <nav class="icons">
+                <span class="bi bi-search"></span>
+                <span class="bi bi-person"></span>
+                <span class="bi bi-cart3"><span class="cart-count">2</span></span>
+                <span class="bi bi-heart"></span>
+            </nav>
+        </div>
+        <span class="bi bi-justify"></span>
+    </header>
+    <article>
+        <span class="bi bi-lightning-fill"></span>
+        <span>HAPPY HOLIDAY DEALS ON EVERYTHING</span>
+        <span class="bi bi-lightning-fill"></span>
+    </article>
+    <section>
+        <main>
+            <div class="women">
+                <div class="card">
+                    <div class="card-title">Women</div>
+                    <button>Shop Women  <span class="bi bi-arrow-right"></span></button>
+                </div>
+            </div>
+            <div class="men">
+                <div class="card">
+                    <div class="card-title">Men</div>
+                    <button>Shop Men  <span class="bi bi-arrow-right"></span></button>
+                </div>
+            </div>  
+            <div class="kid">
+                <div class="card">
+                    <div class="card-title">Kids</div>
+                    <button>Shop Kid  <span class="bi bi-arrow-right"></span></button>
+                </div>
+            </div>
+        </main>
+    </section>
+    <section class="row">
+        <div class="col">
+            <div class="bi bi-truck"></div>
+            <div>
+                <div class="shipping">FREE SHIPPING</div>
+                <div>From all orders over $100</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="bi bi-arrow-left-right"></div>
+            <div>
+                <div class="shipping">FREE RETURNS</div>
+                <div>Return money within 30 days</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="bi bi-lock"></div>
+            <div>
+                <div class="shipping">SECURE SHOPPING</div>
+                <div>You're in safe hands</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="bi bi-tag"></div>
+            <div>
+                <div class="shipping">OVER 10,000 STYLES</div>
+                <div>We have everything you need</div>
+            </div>
+        </div>
+    </section>
+    <section class="collection">
+        <div class="collection_div">
+            <div>NEW COLLECTION</div>
+            <div class="bold_line">Best Picks 2019</div>
+            <div>Appear, dry there darkness they're seas, dry waters thing fly midst. Beast,
+                above fly brought Very green.</div>
+        </div>
+    </section>
+    <section class="section-1">
+        <div class="main1">
+            <div class="card1">
+                <div class="card-1">
+                    <div>Bags Collection</div>
+                    <div>Shop Now <span class="bi bi-arrow-right"></span></div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="card-2">
+                    <div class="offer">
+                        <div>
+                            <div>Save</div>
+                            <div class="discount">30%</div>
+                        </div>
+                    </div>
+                    <div>Printed Men's Shirts</div>
+                    <div>Shop Now <span class="bi bi-arrow-right"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="main2">
+            <div class="card3">
+                <div class="card-2">
+                    <div>Basic women's Dresses</div>
+                    <div>Shop Now <span class="bi bi-arrow-right"></span></div>
+                </div>
+            </div>
+            <div class="card4">
+                <div class="card-1">
+                    <div>Sweatshirts</div>
+                    <div>Shop Now <span class="bi bi-arrow-right"></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="foot-brand">
+            <div class="footer-brand">Shopper.</div>
+            <aside>
+                <span class="bi bi-facebook"></span>
+                <span class="bi bi-instagram"></span>
+                <span class="bi bi-youtube"></span>
+                <span class="bi bi-twitter"></span>
+                <span class="bi bi-linkedin"></span>
+            </aside>
+        </div>
+        <div>
+            <div class="footer-title">SUPPORT</div>
+            <span>Contact Us</span>
+            <span>FAQs</span>
+            <span>Size Guide</span>
+            <span>Shipping & Returns</span>
+            </div>
+        </div>
+        <div>
+            <div class="footer-title">SHOP</div>
+                <span>Men's Shopping</span>
+                <span>Women's Shopping</span>
+                <span>Kid's Shopping</span>
+                <span>Discounts</span>
+            </div>
+        </div>
+        <div>
+            <div class="footer-title">COMPANY</div>
+                <span>Our Story</span>
+                <span>Careers</span>
+                <span>Terms & Conditions</span>
+                <span>Privacy & Cookie policy</span>
+            </div>
+        </div>
+        <div>
+            <div class="footer-title">CONTACT</div>
+                <span>1-202-555-0105</span>
+                <span>1-202-555-0106</span>
+                <span>help@shopper.com</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
