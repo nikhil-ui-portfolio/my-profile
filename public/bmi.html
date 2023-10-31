@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 7.5fr 4.5fr;
+            background-color: gray;
+        }
+        .inner_container{
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+        }
+        .but{
+            grid-column: 1/3;
+            display: flex;
+            justify-content: center
+        }
+    </style>
+    <script>
+        function Calculate(){
+            var male_gender = document.getElementById('male');
+            var female_gender = document.getElementById('female');
+            var foot_height = parseInt(document.getElementById('F_height').value);
+            var inch_height = parseInt(document.getElementById('I_height').value);
+            var age = parseInt(document.getElementById('age').value);
+            var weight = parseInt(document.getElementById('weight').value);
+            var height=(((foot_height*12)+inch_height)*2.54)*(((foot_height*12)+inch_height)*2.54)/10000;
+            var BMI;
+            if(male_gender.checked){
+                BMI = weight/height;
+                BMI = Math.round(BMI);
+                if(BMI<18.5){
+                    document.getElementById('slider').style.left='10%';
+                    document.getElementById('msg').innerHTML='Time to Grab a Bite';
+                    document.getElementById('BMI_value').innerHTML=BMI;
+                } else if(BMI >= 18.5 && BMI <= 24.9){
+                    document.getElementById('slider').style.left='35%';
+                    document.getElementById('msg').innerHTML='Great Shape';
+                    document.getElementById('BMI_value').innerHTML=BMI;
+                }else if(BMI >= 25 && BMI <= 29.9){
+                    document.getElementById('slider').style.left='60%';
+                    document.getElementById('msg').innerHTML='Time to Run';
+                    document.getElementById('BMI_value').innerHTML=BMI;
+                }else if(BMI >= 30 && BMI <= 35){
+                    document.getElementById('slider').style.left='85%';
+                    document.getElementById('msg').innerHTML='Time to Run';
+                    document.getElementById('BMI_value').innerHTML=BMI;
+                }
+                document.getElementById('quote').style.display="block";
+            };
+            if(female_gender.checked){
+                BMI = weight/height;
+                BMI = Math.round(BMI);
+                console.log(BMI);
+            };
+            if(BMI<18.5){
+                document.getElementById('slider').style.left='10%';
+                document.getElementById('msg').innerHTML='Time to Grab a Bite';
+                document.getElementById('BMI_value').innerHTML=BMI;
+            } else if(BMI >= 18.5 && BMI <= 24.9){
+                document.getElementById('slider').style.left='35%';
+                document.getElementById('msg').innerHTML='Great Shape';
+                document.getElementById('BMI_value').innerHTML=BMI;
+            }else if(BMI >= 25 && BMI <= 29.9){
+                document.getElementById('slider').style.left='60%';
+                document.getElementById('msg').innerHTML='Time to Run';
+                document.getElementById('BMI_value').innerHTML=BMI;
+            }else if(BMI >= 30 && BMI <= 35){
+                document.getElementById('slider').style.left='85%';
+                document.getElementById('msg').innerHTML='Time to Run';
+                document.getElementById('BMI_value').innerHTML=BMI;
+            }
+            document.getElementById('quote').style.display="block";
+        }
+    </script>
+</head>
+<body class=" d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class=" border border-2 border-black" style="background-color: #dbdbdb;">
+        <div class="d-flex justify-content-center align-items-center ">
+            <div>
+                <h4>BMI Calculator</h4>
+                <p>Body Mass Index</p>
+            </div>
+        </div>
+        <div class="p-4" >
+            <div class="container p-4 mt-4 bg-white">
+                <div class="inner_container">
+                    <div class="p-4" style="height: 250px;">
+                        <div class="mb-4">
+                            Gender<br>
+                            <input type="radio" name="gender" id="male" class="form-check-input"> <label class="form-check-label me-4"> Male</label>
+                            <input type="radio" name="gender" id="female" class="form-check-input"> <label class="form-check-label"> Female</label>
+                        </div>
+                        <div class="mt-4 w-50 ">
+                            <label for="height">Height</label><br>
+                            <div class="height d-flex">
+                                <input type="number" name="height" id="F_height" style="border: none;border-bottom: 1px solid gray;"  placeholder="foot" class="me-3 w-50">
+                                <input type="number" name="height" id="I_height" style="border: none;border-bottom: 1px solid gray;" class="w-50" placeholder="inch">
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" me-5 p-4" style="height: 250px;">
+                        <div class="mb-4">
+                            <label for="age">Age</label><br>
+                            <input type="number" name="age" min="2" max="120" step="1" required id="age" placeholder="years" style="border: none;border-bottom: 1px solid gray;">
+                        </div>
+                        <div class="mt-4">
+                            <label for="weight">Weight</label><br>
+                            <input type="number" name="weight" id="weight" placeholder="in Kgs" style="border: none;border-bottom: 1px solid gray;">
+                        </div>
+                    </div>
+                    <div class="but">
+                        <button class="btn btn-warning p-3 m-4" onclick="Calculate()">Calculate</button>
+                    </div>
+                </div>
+                <div>
+                    <div style="background-color: #dbdbdb;" class="p-4">
+                        <div>
+                        <p class="text-center">your bmi is</p>
+                        <h3 id="BMI_value" class="text-center"> - - </h3>
+                        <div class="position-relative mt-3">
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary" style="width: 25%;"></div>
+                                <div class="progress-bar bg-success ms-1" style="width: 25%;"></div>
+                                <div class="progress-bar bg-warning ms-1" style="width: 25%;"></div>
+                                <div class="progress-bar bg-danger ms-1" style="width: 25%;"></div>
+                            </div>
+                            <div style="background-color: black; width:10px; height: 30px; position: absolute; left:0%; top:-7px; transition: 2s;" class="mb-2" id="slider"></div>
+                            <div style="font-size: 13px;">
+                                <span class="me-3">Under Weight</span><span class="me-3">Normal Weight</span><span class="me-4">Over Weight</span><span>Obesity</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-center mt-4" id="msg"></h4>
+                        </div>
+                        <div>
+                            <p class="text-center mt-1" id="quote" style="display: none;">By maintaining a healthy weight, you lower your risk of developing serious health problems.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="text-center">Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
