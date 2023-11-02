@@ -55,12 +55,10 @@
         function sliderChange(){
             var slider = document.getElementById('range').value+"px";
             msg_container.style.fontSize=slider;
-            document.getElementById('msg_container').innerHTML=text_input;
         }
         function color_change(){
             var new_color = document.getElementById('color').value;
             msg_container.style.color=new_color;
-            document.getElementById('msg_container').innerHTML=text_input;
         }
         function select(){
             var select_option = document.getElementById('select').value;
@@ -71,19 +69,15 @@
                 msg_container.style.fontStyle="";
                 msg_container.style.fontStyle=select_option;
             }
-            document.getElementById('msg_container').innerHTML=text_input;
         }
         function leftClick(){
             msg_container.className="display_left";
-            document.getElementById('msg_container').innerHTML=text_input;
         }
         function centerClick(){
             msg_container.className="display_center";
-            document.getElementById('msg_container').innerHTML=text_input;
         }
         function rightClick(){
             msg_container.className="display_right";
-            document.getElementById('msg_container').innerHTML=text_input;
         }
     </script>
 </head>
