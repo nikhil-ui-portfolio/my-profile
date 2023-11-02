@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .input_container{
+            width: 80%;
+            margin: auto;
+            border: 5px solid red;
+            padding: 20px;
+        }
+        .container{
+            width: 80%;
+            margin: auto;
+            border: 5px solid red;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .msg_container{
+            width: 80%;
+            margin: auto;
+            border: 5px solid red;
+            padding: 20px;
+            margin-top: 20px;
+            height: 300px;
+        }
+        .display_left{
+            display: flex;
+            justify-content: left;
+        }
+        .display_center{
+            display: flex;
+            justify-content: center;
+        }
+        .display_right{
+            display: flex;
+            justify-content: end;
+        }
+    </style>
+    <script>
+        var text_input;
+        function show_msg(){
+            text_input=document.getElementById('text').value;
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+        function sliderChange(){
+            var slider = document.getElementById('range').value+"px";
+            msg_container.style.fontSize=slider;
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+        function color_change(){
+            var new_color = document.getElementById('color').value;
+            msg_container.style.color=new_color;
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+        function select(){
+            var select_option = document.getElementById('select').value;
+            if(select_option=="bold"){
+                msg_container.style.fontStyle="";
+                msg_container.style.fontWeight=select_option;
+            }else if(select_option="italic"){
+                msg_container.style.fontStyle="";
+                msg_container.style.fontStyle=select_option;
+            }
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+        function leftClick(){
+            msg_container.className="display_left";
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+        function centerClick(){
+            msg_container.className="display_center";
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+        function rightClick(){
+            msg_container.className="display_right";
+            document.getElementById('msg_container').innerHTML=text_input;
+        }
+    </script>
+</head>
+<body>
+    <div class="input_container">
+        Enter Text: <input type="text" name="" id="text" onkeyup="show_msg()">
+    </div>
+    <div class="container">
+        <div>
+            <input type="range" min="10" max="30" name="" onchange="sliderChange()" id="range">
+        </div>
+        <div>
+            <input type="color" name="" id="color" onchange="color_change()">
+        </div>
+        <div>
+            <select name="" id="select" onchange="select()">
+                <option>select option</option>
+                <option value="bold">Bold</option>
+                <option value="italic">Italic</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="leftClick()">left</button>
+            <button onclick="centerClick()">center</button>
+            <button onclick="rightClick()">right</button>
+        </div>
+    </div>
+    <div class="msg_container">
+        <p id="msg_container"></p>
+    </div>
+</body>
+</html>
