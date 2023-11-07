@@ -134,6 +134,11 @@ dl dt span{
     grid-template-columns: 1fr 1fr;
 }
 
+.section-skills-dl{
+    margin-bottom: 1rem;
+    width: 75%;
+}
+
 .section-circle{
     padding-right: 2rem;
 }
