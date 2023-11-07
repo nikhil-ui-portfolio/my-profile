@@ -1,81 +1,288 @@
-.fw-bold{
-    font-family: Arial;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-    padding: 20px;
+html{
+    font-size: 62.5%;
 }
 
-.profile{
-    background-color: gray;   
+nav{
+    font-size: 2rem;
+}
+.navbar{
+    margin: 1.6rem 8rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.navbar-brand{
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-div span{
-    padding-right: 20px;
+.brand-name{
+    font-weight: bold;
+    font-size: 3rem;
 }
-a{
+
+.links span a{
     text-decoration: none;
-    color: gray;
-}
-.div div{
-    margin-bottom: 15px;
+    color: black;
 }
 
-.about_me{
+.links span{
+    margin-left: 1.5rem;
+    font-size: 2rem;
+}
+
+.para{
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 2rem;
+}
+
+.background{
+    background-image: url(public/images/laptop.avif);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.section-profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 6rem 12rem;
+    background-color: rgba(255, 144, 0, 0.9);
     color: white;
-    margin: 50px;
 }
 
-
-
-.about_me dl{
-    display: grid;
-    grid-template-columns: 4fr 8fr;
+.section-profile img{
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.3rem white;
 }
-.skill_list{
-    display: grid;
-    grid-template-columns: 6fr 6fr;
+
+.section-profile-div1{
+    border-right: 0.2rem solid white;
+    margin-right: 5rem;
 }
-.profile{
+
+.section-profile-innerdiv1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.section-profile-innerdiv2{
+    font-size: 2rem;
+}
+
+.section-profile-name{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.section-profile-list{
+    margin: 2rem 0;
+}
+
+.section-profile-list span{
+    margin-right: 2rem;
+}
+
+.profile-button{
+    border: 0.3rem solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color:  rgba(255, 144, 0, 0.9);
+    color:  white;
+}
+
+.section-profile-div2{
+    margin: 5rem 0 0 5rem;
+    padding-right: 1rem;
+}
+
+.section-profile-aboutme{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.section-profile-bio{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.section-profile-innerdiv3 dl{
     display: grid;
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.5rem;
+}
+
+dl dt span{
+    margin-right: 2rem;
+}
+
+.section{
+    margin: 5rem 8rem;
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,.25), 0 0.3rem 0.1rem 0 rgba(0,0,0,.2);
+    padding: 4rem 10rem;
+    font-size: 1.6rem;
+}
+
+.section-name{
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.section-skills-div1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section-circle{
+    padding-right: 2rem;
 }
 
 .role{
-    border-left: 1px solid blue;
-    padding-left: 20px;
-    margin-left: 13px;
-    margin-top: 5px;
-}
-.experience,.education,.skills,.portfolio,.contact{
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.25),0 3px 10px 0 rgba(0,0,0,.2);
-    background-color: #fff;
+    margin-left: 1.2rem;
+    border-left: 0.2rem solid #0d6efd;
+    margin-top: 1rem;
 }
 
-.project{
+.role div{
+    margin-left: 2rem;
+}
+
+.portfolio-project{
     display: grid;
-    grid-template-columns: 6fr 6fr;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem 0;
+    color: black;
+    font-size: x-large;
+    column-gap: 2rem;
 }
 
-.project img{
-    opacity: 0.7;
+.template-name{
+    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
-.project img:hover{
-    opacity: 1;
-}
-
-#contact dl{
+.section-contact-grid{
     display: grid;
-    grid-template-columns: 3fr 9fr;
+    grid-template-columns: 1fr 1.2fr;
+    column-gap: 3rem;
 }
 
-.footer{
-    background-color: gray;
+.section-contact-grid1 dl{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    row-gap: 1rem;
+}
+
+.section-contact-grid2 dl{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    row-gap: 1rem;
+}
+
+.section-footer{
+    background-color: black;
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height:200px;
-    font-size: 40px;
+    font-size: 1.6rem;
+    padding: 5rem;
+    text-align: center;
+}
+
+.section-footer-list span{
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+@media screen and (orientation:portrait){
+    html{
+        font-size: 42.25%;
+    }
+    .navbar{
+        margin: 0;
+        padding: 2rem 5rem;
+    }
+    .section-profile{
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: rgba(255, 144, 0, 0.9);
+        color: white;
+        justify-content: center;
+    }
+    .section-profile-div1 {
+        border-right: 0;
+        padding-bottom: 3rem;
+    }
+    .section-profile-div1 div{
+        text-align: center;
+    }
+    .section-profile-div2 {
+        margin: 3rem 0; 
+        padding-right: 0;
+    }
+    .section-profile-innerdiv2 {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+        
+    }
+    .section-profile-innerdiv2 div{
+        text-align: center;
+    }
+    .section-profile-bio{
+        text-align: center;
+    }
+    .section{
+        margin: 4rem 4rem;
+        padding: 2rem 5rem;
+    }
+    .section-skills-div1{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    dl dt{
+       margin-bottom: 1rem;
+       width: 100%;
+    }
+    dl dd{
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    .portfolio-project{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 2rem;
+        border: 2px solid black;
+        padding: 2rem;
+    }
+    .content-order{
+        grid-row: 2/3;
+    }
+    .template-name{
+        font-size: 3rem;
+    }
+    .section-contact-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+    .nav-link{
+        border-bottom: 0.2rem solid black;
+    }
+    .link1{
+        border-top: 0.2rem solid black;
+    }
 }

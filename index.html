@@ -8,133 +8,142 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/index.css">
+    <script>
+        function nav_button(){
+            var abc = document.getElementById("link");
+            abc.className = "link"
+        }
+    </script>
 </head>
 <body class="container-fluid">
-
-    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse">
+    <header>
+        <nav class="navbar navbar-expand-lg text-white">  <!--navbar-light -->
+            <div class="container-fluid">
+              <a class="navbar-brand " href="#">Nikhil Deshpande</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <h1 class="navbar-brand">Nikhil Deshpande</h1>
-            <div class="navbar-collapse collapse" id="menu">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#about_me" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="#experience"class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link link1" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#contact">Contact</a>
+                    </li>
                 </ul>
+              </div>
             </div>
-        </div>
-    </div>
-
-
-    <!-- <header class="d-flex justify-content-between m-5 mt-2">
-        <div class="fw-bold" style="font-size: 40px;">Nikhil Deshpande</div>
-        <div style="color: gray;font-size: x-large; padding-top: 20px;">
-            <span><a href="#about_me">About</a></span>
-            <span><a href="#skills">Skills</a></span>
-            <span><a href="#portfolio">Portfolio</a></span>
-            <span><a href="#experience">Experience</a></span>
-            <span><a href="#education">Education</a></span>
-            <span class="pe-0"><a href="#contact">Contact</a></span>
-        </div>
-    </header> -->
-    <section class="m-5 profile">
-        <div class="shade d-flex justify-content-center align-items-center">
-            <div class="text-white p-5 m-5 div">
-                <div class="back-ground rounded-4">
-                    <img src="public/images/nikhil.jpg" height="200" width="200" class="rounded-circle border border-3 border-light" alt="">
+          </nav>
+    </header>
+    <section class="background">
+        <div class="section-profile">
+            <div class="section-profile-div1">
+                <div class="section-profile-innerdiv1">
+                    <div>
+                        <img src="public/images/nikhil.jpg" height="200" width="200">
+                    </div>
+                    <div class="section-profile-name">
+                        Nikhil Deshpande
+                    </div>
+                    <div class="section-profile-role">
+                        Full Stack Developer
+                    </div>
+                    <div class="section-profile-list">
+                        <span class="bi bi-facebook text-white"></span>
+                        <span class="bi bi-linkedin text-white"></span>
+                        <span class="bi bi-twitter text-white"></span>
+                        <span class="bi bi-github text-white"></span>
+                    </div>
+                    <div class="profile-button-div">
+                        <button class="profile-button">Download Resume</button>
+                    </div>
                 </div>
-                <div class="fw-bold" style="font-size: 30px;">
-                    Nikhil Deshpande
-                </div>
-                <div class="fw-bold" style="font-size: 20px;">
-                    Front-End Developer
-                </div>
-                <div class="fw-bold" style="font-size: 25px;">
-                    <span class="bi bi-facebook text-white"></span>
-                    <span class="bi bi-linkedin text-white"></span>
-                    <span class="bi bi-twitter text-white"></span>
-                    <span class="bi bi-github text-white"></span>
+            </div>
+            <div class="section-profile-div2">
+                <div class="section-profile-innerdiv2">
+                    <div>
+                        <div class="section-profile-aboutme">
+                            About Me
+                        </div>
+                        <div class="content">
+                            Hello! I am Nikhil Deshpande. I am passionate about UI/UX design and Web Design. I am a skilled <b>front-end developer</b>. I am a quick learner and a team worker that gets the job done.
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <button class="btn border border-3 text-white">Download Resume</button>
-                </div>
-            </div>
-        </div>
-        <div class="about_me p-5 border border-end-0 border-top-0 border-bottom-0" id="about_me">
-            <div class="mt-5">
-                <div class="fw-bold mb-4 fs-5">
-                    About Me
-                </div>
-                <div class="w-75">
-                    Hello! I am Nikhil Deshpande. I am passionate about UI/UX design and Web Design. I am a skilled <b>front-end developer</b>. I am a quick learner and a team worker that gets the job done.
-                </div>
-            </div>
-            <div class="mt-4">
-                <div class="fw-bold mb-4 fs-5">Bio</div>
-                <div>
-                    <dl>
-                        <dt><span class="bi bi-calendar"></span>Age</dt>
-                        <dd>25</dd>
-                        <dt><span class="bi bi-envelope-fill"></span>Email</dt>
-                        <dd>nikhildeshpande518@gmail.com</dd>
-                        <dt><span class="bi bi-telephone"></span>Telephone</dt>
-                        <dd>7842241905</dd>
-                        <dt><span class="bi bi-geo-alt-fill"></span>Address</dt>
-                        <dd>Hyderabad</dd>
-                    </dl>
+                    <div>
+                        <div class="section-profile-bio">Bio</div>
+                        <div class="section-profile-innerdiv3">
+                            <dl>
+                                <dt><span class="bi bi-calendar"></span>Age</dt>
+                                <dd>25</dd>
+                                <dt><span class="bi bi-envelope-fill"></span>Email</dt>
+                                <dd>nikhildeshpande518@gmail.com</dd>
+                                <dt><span class="bi bi-telephone"></span>Telephone</dt>
+                                <dd>7842241905</dd>
+                                <dt><span class="bi bi-geo-alt-fill"></span>Address</dt>
+                                <dd>Hyderabad</dd>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
                 
-    <section class="skills m-5 p-5" id="skills">
-        <div class="fw-bold mb-5 fs-5">
+    <section class="section" id="skills">
+        <div class="section-name">
             Professional Skills
         </div>
-        <div class="skill_list">
+        <div class="section-skills-div1">
             <div> 
                 <dl>
                     <dt>HTML</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-100">Expert</div></dd>
                     <dt>CSS</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-75">Advance</div></dd>
                     <dt>BOOTSTRAP</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-75">Advance</div></dd>
                     <dt>JAVASCRIPT</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning w-25">Learning</div></dd>
                 </dl>
             </div>
             <div>
                 <dl>
                     <dt>TYPESCRIPT</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-0"></div></dd>
                     <dt>NODEJS</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-0"></div></dd>
                     <dt>MONGODB</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-0"></div></dd>
                     <dt>ORACLE</dt>
-                    <dd class="progress w-75">
+                    <dd class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-0"></div></dd>
                 </dl>
             </div>
         </div>
     </section>
-    <section class="experience m-5 p-5" id="experience">
-        <div class="fw-bold fs-5 mb-5">Work Experience</div>
-        <div >
-            <div><span class="border border-3 rounded-circle border-primary"></span> <b class="ps-2">   Junior Web Developer</b> at TCS</div>
+    <section class="section" id="experience">
+        <div class="section-name">Work Experience</div>
+        <div>
+            <div><span class="border border-3 rounded-circle border-primary section-circle"> </span><b class="ps-2">   Junior Web Developer</b> at TCS</div>
             <div class="role">
                 <div><p>Dec 2021 - present</p></div>
                 <div><p>Project Details...</p></div>
@@ -142,54 +151,55 @@
         </div>
     </section>
 
-    <section class="portfolio m-5 p-5" id="portfolio">
-        <div class="name fw-bold fs-5 mb-5">Portfolio</div>
-        <div class="project mb-5">
-            <div><a href="./public/shopper.html"><img src="public/images/Shopper_template.png" height="100%" class="border border-1 border-black" width="95%" alt=""></a></div>
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div>
-                    <div class="fw-bold mb-3" style="font-size: x-large;">Shopper Template</div>
-                    <div style="color: gray;font-size: x-large;"><p>Frontend / HTML / CSS / bootstrap</p></div>
-                    <div style="color: gray; font-size: x-large; text-align: justify;">Built using html, css, bootstrap and is a responsive template for portrait(mobile) and  landscape(Desktop) mode.</div>
-                </div>
+    <section class="section" id="portfolio">
+        <div class="section-name">Portfolio</div>
+        <div class="portfolio-project">
+            <div>
+                <a href="semantics_copy.html"><img src="public/images/Shopper_template.png" height="100%" class="border border-1 border-black" width="100%" alt=""></a>
+            </div>
+            <div>
+                <div class="template-name">Shopper Template</div>
+                <div><p>Frontend / HTML / CSS / bootstrap</p></div>
+                <div class="para">Built using html, css, bootstrap and is a responsive template for portrait(mobile) and  landscape(Desktop) mode.</div>
             </div>
         </div>
-        <div class="project">
-            <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="portfolio-project">
+            <div class="content-order">
                 <div>
-                    <div class="fw-bold mb-3" style="font-size: x-large;">Amazon Cards Template</div>
-                    <div style="color: gray;font-size: x-large;"><p>Frontend / HTML / CSS / bootstrap</p></div>
-                    <div style="color: gray; font-size: x-large;" class="pe-5">Built using html, css, bootstrap and is a responsive template for portrait(mobile) and landscape(Desktop) mode.</div>
+                    <div class="template-name">Amazon Cards Template</div>
+                    <div><p>Frontend / HTML / CSS / bootstrap</p></div>
+                    <div class="para">Built using html, css, bootstrap and is a responsive template for portrait(mobile) and landscape(Desktop) mode.</div>
                 </div>
             </div>
-            <div><a href="public/amazon.html"><img src="public/images/amazon_template.png" class="border border-1 border-black" height="100%" width="95%" alt=""></a></div>
+            <div class="img-order"><a href="amazon.html"><img src="public/images/amazon_template.png" class="border border-1 border-black" height="100%" width="100%" alt=""></a></div>
         </div>
     </section>
 
-    <section class="education m-5 p-5" id="education">
-        <div class="fw-bold fs-5 mb-5">Education</div>
+    <section class="section" id="education">
+        <div class="section-name">Education</div>
         <div >
-            <div><span class="border border-3 rounded-circle border-primary"></span> <b class="ps-2">B.Tech in Electrical and Electonics Engineering</b></div>
+            <div><span class="border border-3 rounded-circle border-primary section-circle"></span> <b class="ps-2">B.Tech in Electrical and Electonics Engineering</b></div>
             <div class="role">
                 <div><p>from Bharat Institute of Engineering and Technology</p></div>
                 <div><p>2016 - 2020</p></div>
             </div>
-            <div><span class="border border-3 rounded-circle border-primary"></span> <b class="ps-2">Intermediate</b></div>
+            <div><span class="border border-3 rounded-circle border-primary section-circle"></span> <b class="ps-2">Intermediate</b></div>
             <div class="role">
                 <div><p>from Narayana Junior College</p></div>
                 <div><p>2014 - 2016</p></div>
             </div>
-            <div><span class="border border-3 rounded-circle border-primary"></span> <b class="ps-2">class 10<sup>th</sup></b></div>
+            <div><span class="border border-3 rounded-circle border-primary section-circle"></span> <b class="ps-2">class 10<sup>th</sup></b></div>
             <div class="role">
                 <div><p>from Gautami Talent High School</p></div>
                 <div><p>2014</p></div>
             </div>
         </div>
     </section>
-    <section class="contact m-5  p-5" id="contact">
-        <div class="fw-bold fs-5 mb-5">Contact</div>
-        <div style="display: grid;grid-template-columns: 6fr 6fr;">
-            <div class="w-100 pe-5">
+    <section class="section" id="contact">
+        <div class="section-contact-grid">
+            <div>
+                <div class="section-name">Get in Touch</div>
+            <div class="section-contact-grid1">
                 <dl>
                     <dt class="fw-bold">Name</dt>
                     <dd><input type="text" class="form-control" ></dd>
@@ -202,24 +212,28 @@
                 </dl>
                 <button class="btn btn-primary">Submit</button>
             </div>
-            <div class="ps-5">
+            </div>
+            <div>
+                <div class="section-name">Contact Details</div>
+                <div class="section-contact-grid2">
                 <dl>
-                    <dt><span class="bi bi-telephone"></span>Telephone</dt>
+                    <dt><span class="bi bi-telephone"></span>Telephone:</dt>
                     <dd>7842241905</dd>
-                    <dt><span class="bi bi-envelope-fill"></span>Email</dt>
-                    <dd>nikhildeshpande518@gmail.com</dd>
-                    <dt><span class="bi bi-geo-alt-fill"></span>Address</dt>
+                    <dt><span class="bi bi-envelope-fill"></span>Email:</dt>
+                    <dd>nikhil</dd>
+                    <dt><span class="bi bi-geo-alt-fill"></span>Address:</dt>
                     <dd>Hyderabad</dd>
                 </dl>
             </div>
+            </div>
         </div>
     </section>
-    <footer class="footer m-5 mb-0">
+    <footer class="section-footer" id="footer">
         <div>
-            <div class="fw-bold mb-5">
+            <div class="section-name">
                 Nikhil Deshpande
             </div>
-            <div class="ps-5">
+            <div class="section-footer-list">
                 <span class="bi bi-facebook text-white"></span>
                 <span class="bi bi-linkedin text-white"></span>
                 <span class="bi bi-twitter text-white"></span>
@@ -227,5 +241,7 @@
             </div>
         </div>
     </footer>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
